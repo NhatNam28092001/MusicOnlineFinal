@@ -1912,6 +1912,7 @@
     <Content Include="Content\images\bg-01.jpg" />
     <Content Include="Content\images\bg-02.jpg" />
     <Content Include="Content\images\bg-03.jpg" />
+    <Content Include="Content\images\bg-04.jpg" />
     <Content Include="Content\images\blog-01.jpg" />
     <Content Include="Content\images\blog-02.jpg" />
     <Content Include="Content\images\blog-03.jpg" />
