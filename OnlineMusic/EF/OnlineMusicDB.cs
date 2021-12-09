@@ -20,6 +20,9 @@ namespace OnlineMusic.EF
         public virtual DbSet<SLIDE> SLIDEs { get; set; }
     
         public virtual DbSet<USER> USERs { get; set; }
+        public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
+        public virtual DbSet<ORDER> ORDERs { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -74,6 +77,18 @@ namespace OnlineMusic.EF
             modelBuilder.Entity<USER>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<CUSTOMER>()
+                .Property(e => e.UserName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CUSTOMER>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<OrderDetail>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
         }
     }
 }

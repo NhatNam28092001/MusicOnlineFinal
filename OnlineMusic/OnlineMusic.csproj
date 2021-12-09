@@ -180,10 +180,13 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="DAO\USER_DAO.cs" />
     <Compile Include="EF\CASI.cs" />
+    <Compile Include="EF\CUSTOMER.cs" />
     <Compile Include="EF\DANHMUC.cs" />
     <Compile Include="EF\DANHMUCSANPHAM.cs" />
     <Compile Include="EF\NEWS.cs" />
     <Compile Include="EF\OnlineMusicDB.cs" />
+    <Compile Include="EF\ORDER.cs" />
+    <Compile Include="EF\OrderDetail.cs" />
     <Compile Include="EF\SANPHAM.cs" />
     <Compile Include="EF\SLIDE.cs" />
     <Compile Include="EF\USER.cs" />
