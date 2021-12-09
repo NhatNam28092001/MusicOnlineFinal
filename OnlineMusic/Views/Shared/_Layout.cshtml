@@ -85,25 +85,35 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li class="active-menu">
-                                @Html.ActionLink("Home", "Index", "Main", null, new { @class = "main-menu" })
+                                @Html.ActionLink("HOME", "Index", "Main", null, new { @class = "main-menu" })
                             </li>
-
+                            <li></li>
                             <li class="label1" data-label1="hot">
                                 @Html.ActionLink("Shop", "Product", "Main", null, new { @class = "main-menu" })
 
                             </li>
-
+                            <li></li>
                             <li>
                                 @Html.ActionLink("Features", "Shopping_Cart", "Main", null, new { @class = "main-menu" })
                             </li>
-
+                            <li></li>
                             <li>
-                                @Html.ActionLink("Blog", "Blog", "Main", null, new { @class = "main-menu" })
+                                @Html.ActionLink("Artist", "Shopping_Cart", "Main", null, new { @class = "main-menu" })
+                                <ul class="sub-menu">
+                                    <li><a href="index.html">Ca sĩ a</a></li>
+                                    <li><a href="home-02.html">Ca sĩ b</a></li>
+                                    <li><a href="home-03.html">Ca sĩ c</a></li>
+                                </ul>
                             </li>
-
+                            <li></li>
+                            <li>
+                                @Html.ActionLink("News", "Blog", "Main", null, new { @class = "main-menu" })
+                            </li>
+                            <li></li>
                             <li>
                                 @Html.ActionLink("About", "About", "Main", null, new { @class = "main-menu" })
                             </li>
+                            <li></li>
                             <li>
                                 @Html.ActionLink("Contact", "Contact", "Main", null, new { @class = "main-menu" })
                             </li>
