@@ -421,19 +421,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .sub-menu a {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #555;
-
-  display: block;
-  padding: 8px 20px; 
-  width: 100%;
-
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    display: block;
+    padding: 8px 20px;
+    width: 100%;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
 }
 
 /*---------------------------------------------*/

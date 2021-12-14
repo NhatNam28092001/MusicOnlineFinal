@@ -66,6 +66,20 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseE"
+                   aria-expanded="true" aria-controls="collapseE">
+                    <span>Danh mục sản phẩm</span>
+                </a>
+                <div id="collapseE" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        @Html.ActionLink("Thêm danh mục", "Index", "ProductCategory", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách các danh mục", "Danhsach", "ProductCategory", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -92,10 +106,8 @@
                 <div id="collapseA" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm ca sĩ", "Index", "CaSi", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách ca sĩ", "Danhsach", "CaSi", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -125,15 +137,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseB"
                    aria-expanded="true" aria-controls="collapseB">
-                    <span>Tin tức</span>
+                    <span>Blogs</span>
                 </a>
                 <div id="collapseB" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm blog", "Index", "Blog", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách blog", "Danhsach", "Blog", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -170,12 +180,12 @@
                 </div>
             </li>
             @*
-                <li class="nav-item">
+        <li class="nav-item">
 
-                    @Html.ActionLink("Phản hồi", "Chart", "Home", null, new { @class = "nav-link" })
+            @Html.ActionLink("Phản hồi", "Chart", "Home", null, new { @class = "nav-link" })
 
 
-                </li>*@
+        </li>*@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">

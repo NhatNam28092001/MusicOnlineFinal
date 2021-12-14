@@ -47,10 +47,6 @@ namespace OnlineMusic.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<NEWS>()
-                .Property(e => e.Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<NEWS>()
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
 
@@ -89,6 +85,8 @@ namespace OnlineMusic.EF
             modelBuilder.Entity<OrderDetail>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
+
+
         }
     }
 }

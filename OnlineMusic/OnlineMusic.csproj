@@ -142,8 +142,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CaSiController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlideController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModels.cs" />
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
@@ -177,7 +181,15 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\CaSi1Controller.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\Slide1Controller.cs" />
+    <Compile Include="DAO\BLOG_DAO.cs" />
+    <Compile Include="DAO\CASI_DAO.cs" />
+    <Compile Include="DAO\PRODUCTCATEGORY_DAO.cs" />
+    <Compile Include="DAO\PRODUCT_DAO.cs" />
+    <Compile Include="DAO\SLIDE_DAO.cs" />
     <Compile Include="DAO\USER_DAO.cs" />
     <Compile Include="EF\CASI.cs" />
     <Compile Include="EF\CUSTOMER.cs" />
@@ -2369,6 +2381,22 @@
     <Content Include="Content\vendor\slick\slick-theme.scss" />
     <Content Include="Content\vendor\slick\slick.less" />
     <Content Include="Content\vendor\slick\slick.scss" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\CaSi\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\CaSi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CaSi\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\CaSi\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Xoa.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2394,6 +2422,10 @@
     <Content Include="Views\Main\Product.cshtml" />
     <Content Include="Views\Main\Product_Detail.cshtml" />
     <Content Include="Views\Main\Shopping_Cart.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
+    <Content Include="Views\Shared\CaSi.cshtml" />
+    <Content Include="Views\Shared\Blog.cshtml" />
+    <Content Include="Views\Shared\Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2402,6 +2434,9 @@
     <Folder Include="Areas\Client\Data\" />
     <Folder Include="Areas\Client\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\CaSi\" />
+    <Folder Include="Views\Product\" />
+    <Folder Include="Views\Slide\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
