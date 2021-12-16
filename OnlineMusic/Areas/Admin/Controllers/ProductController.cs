@@ -9,72 +9,19 @@ using System.Web.Mvc;
 
 namespace OnlineMusic.Areas.Admin.Controllers
 {
-    public class BlogController : Controller
+    public class ProductController : Controller
     {
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult Danhsach(int page = 1, int pageSize = 4)
-        {
-            var dao = new BLOG_DAO();
-            var model = dao.ListAllPaging(page, pageSize);
-            return View(model);
-        }
-        [HttpGet]
-        public ActionResult Xoa(string meta)
+        // GET: Admin/User/Sua/5
+        public ActionResult Sua(int? id)
         {
             using (OnlineMusicDB dbModel = new OnlineMusicDB())
             {
-                return View(dbModel.NEWS.Where(x => x.MetaTitle == meta).FirstOrDefault());
-            }
-        }
-
-
-        [HttpPost]
-        public ActionResult Xoa(string meta, NEWS ne)
-        {
-            try
-            {
-                using (OnlineMusicDB dbModel = new OnlineMusicDB())
-                {
-                    ne = dbModel.NEWS.Where(x => x.MetaTitle == meta).FirstOrDefault();
-                    dbModel.Entry(ne).State = EntityState.Modified;
-                    dbModel.NEWS.Remove(ne);
-                    dbModel.SaveChanges();
-
-                }
-                return RedirectToAction("Danhsach");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        public ActionResult Them(NEWS ne)
-        {
-            if (ModelState.IsValid)
-            {
-                var dao = new BLOG_DAO();
-                var id = dao.Insert(ne);
-                if (id == true)
-                {
-                    return RedirectToAction("Danhsach", "Blog");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Them Blog ko thanh cong");
-                }
-            }
-            return View("Index");
-        }
-        public ActionResult Sua(string meta)
-        {
-            using (OnlineMusicDB dbModel = new OnlineMusicDB())
-            {
-                var kq = dbModel.NEWS.Where(x => x.MetaTitle == meta).FirstOrDefault();
+                var kq = dbModel.SLIDEs.Where(x => x.ID == id).FirstOrDefault();
                 return View(kq);
             }
         }
@@ -82,13 +29,13 @@ namespace OnlineMusic.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Sua(string meta, NEWS ne)
+        public ActionResult Sua(int? id, SLIDE slide)
         {
             try
             {
                 using (OnlineMusicDB dbModel = new OnlineMusicDB())
                 {
-                    dbModel.Entry(ne).State = EntityState.Modified;
+                    dbModel.Entry(slide).State = EntityState.Modified;
                     dbModel.SaveChanges();
                 }
                 return RedirectToAction("Danhsach");
@@ -99,9 +46,58 @@ namespace OnlineMusic.Areas.Admin.Controllers
             }
 
         }
-        public ActionResult Chitiet()
+        public ActionResult Them(SANPHAM sp)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var dao = new PRODUCT_DAO();
+                var id = dao.Insert(sp);
+                if (id == true)
+                {
+                    return RedirectToAction("Danhsach", "Slide");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Them slider ko thanh cong");
+                }
+            }
+            return View("Index");
+        }
+        public ActionResult Danhsach(int page = 1, int pageSize = 10)
+        {
+            var dao = new PRODUCT_DAO();
+            var model = dao.ListAllPaging(page, pageSize);
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult Xoa(int? id)
+        {
+            using (OnlineMusicDB dbModel = new OnlineMusicDB())
+            {
+                return View(dbModel.SANPHAMs.Where(x => x.ID == id).FirstOrDefault());
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult Xoa(int? id, SANPHAM sp)
+        {
+            try
+            {
+                using (OnlineMusicDB dbModel = new OnlineMusicDB())
+                {
+                    sp = dbModel.SANPHAMs.Where(x => x.ID == id).FirstOrDefault();
+                    dbModel.Entry(sp).State = EntityState.Modified;
+                    dbModel.SANPHAMs.Remove(sp);
+                    dbModel.SaveChanges();
+
+                }
+                return RedirectToAction("Danhsach");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
