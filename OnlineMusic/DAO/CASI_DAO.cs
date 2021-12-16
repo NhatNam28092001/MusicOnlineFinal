@@ -25,5 +25,9 @@ namespace OnlineMusic.DAO
             db.SaveChanges();
             return true;
         }
+        public List<CASI> ListAll()
+        {
+            return db.CASIs.OrderBy(x => x.SingerID).ToList();
+        }
     }
 }

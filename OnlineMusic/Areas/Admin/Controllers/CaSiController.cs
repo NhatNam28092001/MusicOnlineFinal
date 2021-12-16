@@ -25,23 +25,23 @@ namespace OnlineMusic.Areas.Admin.Controllers
             return View(model);
         }
         [HttpGet]
-        public ActionResult Xoa(string name)
+        public ActionResult Xoa(string meta)
         {
             using (OnlineMusicDB dbModel = new OnlineMusicDB())
             {
-                return View(dbModel.CASIs.Where(x => x.Name == name).FirstOrDefault());
+                return View(dbModel.CASIs.Where(x => x.MetaTitle == meta).FirstOrDefault());
             }
         }
 
 
         [HttpPost]
-        public ActionResult Xoa(string name, CASI casi)
+        public ActionResult Xoa(string meta, CASI casi)
         {
             try
             {
                 using (OnlineMusicDB dbModel = new OnlineMusicDB())
                 {
-                    casi = dbModel.CASIs.Where(x => x.Name == name).FirstOrDefault();
+                    casi = dbModel.CASIs.Where(x => x.MetaTitle == meta).FirstOrDefault();
                     dbModel.Entry(casi).State = EntityState.Modified;
                     dbModel.CASIs.Remove(casi);
                     dbModel.SaveChanges();
@@ -70,6 +70,35 @@ namespace OnlineMusic.Areas.Admin.Controllers
                 }
             }
             return View("Index");
+        }
+        public ActionResult Sua(string meta)
+        {
+            using (OnlineMusicDB dbModel = new OnlineMusicDB())
+            {
+                var kq = dbModel.CASIs.Where(x => x.MetaTitle == meta).FirstOrDefault();
+                return View(kq);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Sua(string meta, CASI casi)
+        {
+            try
+            {
+                using (OnlineMusicDB dbModel = new OnlineMusicDB())
+                {
+                    dbModel.Entry(casi).State = EntityState.Modified;
+                    dbModel.SaveChanges();
+                }
+                return RedirectToAction("Danhsach");
+            }
+            catch
+            {
+                return View();
+            }
+
         }
     }
 
