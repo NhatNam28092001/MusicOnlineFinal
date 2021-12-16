@@ -512,7 +512,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="~/Content/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    <script src="~/Content/libs/ckfinder.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="~/Content/admin/js/sb-admin-2.min.js"></script>
 
@@ -522,7 +522,7 @@
     <!-- Page level custom scripts -->
     <script src="~/Content/admin/js/demo/chart-area-demo.js"></script>
     <script src="~/Content/admin/js/demo/chart-pie-demo.js"></script>
-
+    @RenderSection("jsFooter", required:false)
 </body>
 
 </html>
