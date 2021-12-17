@@ -34,20 +34,21 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-        <tr>
-            <td>@item.ID</td>
-            <td>@item.Name</td>
-            <td>@item.MetaTitle</td>
-            <td>@item.ParentID</td>
-            <td>@item.DisplayOrder</td>
-            <td>@item.Status</td>
-            <td>@item.ShowOnHome</td>
-            <td>
-                <a href="/Admin/ProductCategory/Sua?meta=@item.MetaTitle">Sửa</a>
-                |
-                <a href="/Admin/ProductCategory/Xoa?meta=@item.MetaTitle"> Xóa</a>
-            </td>
-        </tr>}
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Name</td>
+                            <td>@item.MetaTitle</td>
+                            <td>@item.ParentID</td>
+                            <td>@item.DisplayOrder</td>
+                            <td>@item.Status</td>
+                            <td>@item.ShowOnHome</td>
+                            <td>
+                                <a href="/Admin/ProductCategory/Sua?meta=@item.MetaTitle">Sửa</a>
+                                |
+                                <a href="/Admin/ProductCategory/Xoa?meta=@item.MetaTitle"> Xóa</a>
+                            </td>
+                        </tr>
+}
 
                 </tbody>
             </table>

@@ -7,7 +7,7 @@
 
 @section jsFooter{
     <script language="javascript" , type="text/javascript">
-        $(function(){
+        $(function () {
             $('#btnImage').on('click', function (e) {
                 e.preventDefault();
                 var finder = new CKFinder();
@@ -72,7 +72,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Desciption, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Desciption, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" }, style = "resize: none; width:100% ", cols = "50", rows = "4" })
                 @Html.ValidationMessageFor(model => model.Desciption, "", new { @class = "text-danger" })
             </div>
         </div>

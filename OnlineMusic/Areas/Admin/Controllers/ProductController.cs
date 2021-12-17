@@ -17,11 +17,11 @@ namespace OnlineMusic.Areas.Admin.Controllers
             return View();
         }
         // GET: Admin/User/Sua/5
-        public ActionResult Sua(int? id)
+        public ActionResult Sua(string meta)
         {
             using (OnlineMusicDB dbModel = new OnlineMusicDB())
             {
-                var kq = dbModel.SLIDEs.Where(x => x.ID == id).FirstOrDefault();
+                var kq = dbModel.SANPHAMs.Where(x => x.MetaTitle == meta).FirstOrDefault();
                 return View(kq);
             }
         }
@@ -29,13 +29,13 @@ namespace OnlineMusic.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Sua(int? id, SLIDE slide)
+        public ActionResult Sua(string meta, SANPHAM dm)
         {
             try
             {
                 using (OnlineMusicDB dbModel = new OnlineMusicDB())
                 {
-                    dbModel.Entry(slide).State = EntityState.Modified;
+                    dbModel.Entry(dm).State = EntityState.Modified;
                     dbModel.SaveChanges();
                 }
                 return RedirectToAction("Danhsach");
@@ -46,49 +46,49 @@ namespace OnlineMusic.Areas.Admin.Controllers
             }
 
         }
-        public ActionResult Them(SANPHAM sp)
+        public ActionResult Them(SANPHAM dm)
         {
             if (ModelState.IsValid)
             {
                 var dao = new PRODUCT_DAO();
-                var id = dao.Insert(sp);
+                var id = dao.Insert(dm);
                 if (id == true)
                 {
-                    return RedirectToAction("Danhsach", "Slide");
+                    return RedirectToAction("Danhsach", "Product");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Them slider ko thanh cong");
+                    ModelState.AddModelError("", "Them san pham ko thanh cong");
                 }
             }
             return View("Index");
         }
-        public ActionResult Danhsach(int page = 1, int pageSize = 10)
+        public ActionResult Danhsach(int page = 1, int pageSize = 40)
         {
             var dao = new PRODUCT_DAO();
             var model = dao.ListAllPaging(page, pageSize);
             return View(model);
         }
         [HttpGet]
-        public ActionResult Xoa(int? id)
+        public ActionResult Xoa(string meta)
         {
             using (OnlineMusicDB dbModel = new OnlineMusicDB())
             {
-                return View(dbModel.SANPHAMs.Where(x => x.ID == id).FirstOrDefault());
+                return View(dbModel.SANPHAMs.Where(x => x.MetaTitle == meta).FirstOrDefault());
             }
         }
 
 
         [HttpPost]
-        public ActionResult Xoa(int? id, SANPHAM sp)
+        public ActionResult Xoa(string meta, SANPHAM dm)
         {
             try
             {
                 using (OnlineMusicDB dbModel = new OnlineMusicDB())
                 {
-                    sp = dbModel.SANPHAMs.Where(x => x.ID == id).FirstOrDefault();
-                    dbModel.Entry(sp).State = EntityState.Modified;
-                    dbModel.SANPHAMs.Remove(sp);
+                    dm = dbModel.SANPHAMs.Where(x => x.MetaTitle == meta).FirstOrDefault();
+                    dbModel.Entry(dm).State = EntityState.Modified;
+                    dbModel.SANPHAMs.Remove(dm);
                     dbModel.SaveChanges();
 
                 }

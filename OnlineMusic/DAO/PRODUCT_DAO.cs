@@ -24,9 +24,18 @@ namespace OnlineMusic.DAO
             db.SaveChanges();
             return true;
         }
-        public IEnumerable<SLIDE> ListAllPaging(int page, int pageSize)
+        public IEnumerable<SANPHAM> ListAllPaging(int page, int pageSize)
         {
-            return db.SLIDEs.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+            return db.SANPHAMs.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+        }
+        public List<SANPHAM> ListSanPham(int id)
+        {
+            return db.SANPHAMs.OrderByDescending(x => x.ID).ToList();
+        }
+
+        public SANPHAM ViewDetail(long id)
+        {
+            return db.SANPHAMs.Find(id);
         }
     }
 }

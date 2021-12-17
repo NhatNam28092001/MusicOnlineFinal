@@ -198,12 +198,15 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\Blog1Controller.cs" />
     <Compile Include="Controllers\CaSi1Controller.cs" />
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\Product1Controller.cs" />
+    <Compile Include="Controllers\ProductCategory1Controller.cs" />
     <Compile Include="Controllers\Slide1Controller.cs" />
     <Compile Include="DAO\BLOG_DAO.cs" />
     <Compile Include="DAO\CASI_DAO.cs" />
+    <Compile Include="DAO\DANHMUC_DAO.cs" />
     <Compile Include="DAO\PRODUCTCATEGORY_DAO.cs" />
     <Compile Include="DAO\PRODUCT_DAO.cs" />
     <Compile Include="DAO\SLIDE_DAO.cs" />
@@ -3065,6 +3068,10 @@
     <Content Include="Areas\Admin\Views\Slide\Danhsach.cshtml" />
     <Content Include="Areas\Admin\Views\Slide\Sua.cshtml" />
     <Content Include="Areas\Admin\Views\Slide\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Xoa.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3094,19 +3101,20 @@
     <Content Include="Views\Shared\CaSi.cshtml" />
     <Content Include="Views\Shared\Blog.cshtml" />
     <Content Include="Views\Shared\Slider.cshtml" />
+    <Content Include="Views\Shared\Product.cshtml" />
+    <Content Include="Views\Shared\Blog _Detail.cshtml" />
+    <Content Include="Views\Shared\Product_Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Areas\Client\Controllers\" />
     <Folder Include="Areas\Client\Data\" />
     <Folder Include="Areas\Client\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Uploadimg\" />
+    <Folder Include="Views\Blog1\" />
     <Folder Include="Views\CaSi\" />
-    <Folder Include="Views\Product\" />
-    <Folder Include="Views\Slide\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

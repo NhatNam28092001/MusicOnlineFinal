@@ -52,11 +52,12 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-             <input type="submit" value="Delete" class="btn btn-success btn-icon-split" /> |
+            <input type="submit" value="Delete" class="btn btn-success btn-icon-split" /> |
             @Html.ActionLink("Back to List", "Danhsach")
         </div>
     }

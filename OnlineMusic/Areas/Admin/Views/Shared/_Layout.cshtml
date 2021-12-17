@@ -1,4 +1,4 @@
-﻿   
+﻿
 @{ Layout = null; }
 
 <!DOCTYPE html>
@@ -89,8 +89,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Thêm danh mục", "Index", "Product", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Danh sách các danh mục", "Danhsach", "Product", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm sản phẩm", "Index", "Product", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách các sản phẩm", "Danhsach", "Product", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -176,12 +176,12 @@
                 </div>
             </li>
             @*
-        <li class="nav-item">
+                <li class="nav-item">
 
-            @Html.ActionLink("Phản hồi", "Chart", "Home", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Phản hồi", "Chart", "Home", null, new { @class = "nav-link" })
 
 
-        </li>*@
+                </li>*@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -400,8 +400,8 @@
                                 <img class="img-profile rounded-circle"
                                      src="~/Content/admin/img/undraw_profile.svg">
                             </a>-->
-                            <!-- Dropdown - User Information -->
-                            <!--<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        <!-- Dropdown - User Information -->
+                        <!--<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -520,7 +520,7 @@
     <!-- Page level custom scripts -->
     <script src="~/Content/admin/js/demo/chart-area-demo.js"></script>
     <script src="~/Content/admin/js/demo/chart-pie-demo.js"></script>
-    @RenderSection("jsFooter", required:false)
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>

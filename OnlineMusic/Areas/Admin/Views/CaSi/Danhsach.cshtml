@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<OnlineMusic.EF.CASI>
 
-@{ 
-    ViewBag.Title = "Danhsach";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; 
-}
+@{ ViewBag.Title = "Danhsach";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 <div>
     <button class="btn btn-light" type="button">
@@ -33,19 +31,18 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.SingerID</td>
-                            <td>@item.Name</td>
-                            <td>@item.MetaTitle</td>
-                            <td>@item.Desciption</td>
-                            <td>@item.Image</td>
-                            <td>@item.CategoryID</td>
-                            <td>
-                                <a href="/Admin/CaSi/Sua?meta=@item.MetaTitle">Sửa</a>
-                                <a href="/Admin/CaSi/Xoa?meta=@item.MetaTitle"> Xóa</a>
-                            </td>
-                        </tr>
-                      }
+        <tr>
+            <td>@item.SingerID</td>
+            <td>@item.Name</td>
+            <td>@item.MetaTitle</td>
+            <td>@item.Desciption</td>
+            <td>@item.Image</td>
+            <td>@item.CategoryID</td>
+            <td>
+                <a href="/Admin/CaSi/Sua?meta=@item.MetaTitle">Sửa</a>
+                <a href="/Admin/CaSi/Xoa?meta=@item.MetaTitle"> Xóa</a>
+            </td>
+        </tr>}
 
                 </tbody>
             </table>

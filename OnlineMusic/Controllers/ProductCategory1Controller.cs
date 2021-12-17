@@ -7,7 +7,7 @@ using OnlineMusic.DAO;
 
 namespace OnlineMusic.Controllers
 {
-    public class ProductController : Controller
+    public class ProductCategory1Controller : Controller
     {
         // GET: Product
         public ActionResult Index()
