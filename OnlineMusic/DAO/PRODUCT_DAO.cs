@@ -30,9 +30,14 @@ namespace OnlineMusic.DAO
         }
         public List<SANPHAM> ListSanPham(int id)
         {
-            return db.SANPHAMs.OrderByDescending(x => x.ID).ToList();
+            return db.SANPHAMs.OrderBy(x => x.ID).ToList();
         }
+        public List<SANPHAM> ListRelatedSanPham(long productid)
+        {
+            var product = db.SANPHAMs.Find(productid);
 
+            return db.SANPHAMs.Where(x => x.ID != productid && x.CategoryID == product.CategoryID).ToList();
+        }
         public SANPHAM ViewDetail(long id)
         {
             return db.SANPHAMs.Find(id);

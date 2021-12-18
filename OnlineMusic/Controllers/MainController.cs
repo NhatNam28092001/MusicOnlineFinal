@@ -12,6 +12,8 @@ namespace OnlineMusic.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            var productdao = new PRODUCT_DAO();
+            ViewBag.SANPHAM = productdao.ListSanPham(1);
             return View();
         }
         public ActionResult About()
@@ -20,12 +22,11 @@ namespace OnlineMusic.Controllers
         }
         public ActionResult Blog()
         {
+            var blogdao = new BLOG_DAO();
+            ViewBag.NEWS = blogdao.ListBlog(1);
             return View();
         }
-        public ActionResult Blog_Detail()
-        {
-            return View();
-        }
+        
         public ActionResult Contact()
         {
             return View();

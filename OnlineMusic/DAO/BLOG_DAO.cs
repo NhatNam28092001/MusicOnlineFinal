@@ -29,6 +29,10 @@ namespace OnlineMusic.DAO
         {
             return db.NEWS.OrderBy(x => x.ID).ToList();
         }
+        public List<NEWS> ListBlog(int id)
+        {
+            return db.NEWS.OrderBy(x => x.ID).ToList();
+        }
         public NEWS ViewDetail(int id)
         {
             return db.NEWS.Find(id);

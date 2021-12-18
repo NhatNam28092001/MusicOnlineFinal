@@ -14,18 +14,10 @@ namespace OnlineMusic.Controllers
         {
             return View();
         }
-        [ChildActionOnly]
-        public PartialViewResult Blog()
+        public ActionResult Blog_Detail(int id)
         {
-            var model = new BLOG_DAO().ListAll();
-            return PartialView(model);
-        }
-
-        [ChildActionOnly]
-        public PartialViewResult Blog_Detail(int id)
-        {
-            var model = new BLOG_DAO().ViewDetail(id);
-            return PartialView(model);
+            var blog = new BLOG_DAO().ViewDetail(id);
+            return View(blog);
         }
     }
 }

@@ -201,7 +201,6 @@
     <Compile Include="Controllers\Blog1Controller.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\Product1Controller.cs" />
-    <Compile Include="Controllers\ProductCategory1Controller.cs" />
     <Compile Include="DAO\BLOG_DAO.cs" />
     <Compile Include="DAO\CASI_DAO.cs" />
     <Compile Include="DAO\DANHMUC_DAO.cs" />
@@ -3090,18 +3089,14 @@
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Blog.cshtml" />
-    <Content Include="Views\Main\Blog_Detail.cshtml" />
     <Content Include="Views\Main\Contact.cshtml" />
-    <Content Include="Views\Main\Product.cshtml" />
-    <Content Include="Views\Main\Product_Detail.cshtml" />
     <Content Include="Views\Main\Shopping_Cart.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
     <Content Include="Views\Shared\CaSi.cshtml" />
-    <Content Include="Views\Shared\Blog.cshtml" />
     <Content Include="Views\Shared\Slider.cshtml" />
-    <Content Include="Views\Shared\Product.cshtml" />
-    <Content Include="Views\Shared\Product_Detail.cshtml" />
     <Content Include="Views\Blog1\Blog_Detail.cshtml" />
+    <Content Include="Views\Product1\Product.cshtml" />
+    <Content Include="Views\Product1\Product_Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

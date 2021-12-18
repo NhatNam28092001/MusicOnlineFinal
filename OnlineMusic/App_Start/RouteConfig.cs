@@ -13,6 +13,17 @@ namespace OnlineMusic
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            /*routes.MapRoute(
+                name: "Blog Detail",
+                url: "blog/{metatitle}-{id}",
+                defaults: new { controller = "Blog1", action = "Blog_Detail", id = UrlParameter.Optional }
+            );*/
+            routes.MapRoute(
+                name: "Product Detail",
+                url: "chitiet/{metatitle}-{id}",
+                defaults: new { controller = "Product1", action = "Product_Detail", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
