@@ -15,13 +15,13 @@ namespace OnlineMusic.Controllers
             return View();
         }
         [ChildActionOnly]
-        public PartialViewResult Product(long id)
+        public PartialViewResult Product()
         {
             var model = new PRODUCT_DAO().ListAll();
             return PartialView(model);
         }
 
-        public ActionResult Product_Detail(long id)
+        public ActionResult Product_Detail(int id)
         {
             var product = new PRODUCT_DAO().ViewDetail(id);
             ViewBag.ProductCategory = new PRODUCTCATEGORY_DAO().ViewDetail(product.ID); 

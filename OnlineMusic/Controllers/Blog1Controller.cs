@@ -20,5 +20,12 @@ namespace OnlineMusic.Controllers
             var model = new BLOG_DAO().ListAll();
             return PartialView(model);
         }
+
+        [ChildActionOnly]
+        public PartialViewResult Blog_Detail(int id)
+        {
+            var model = new BLOG_DAO().ViewDetail(id);
+            return PartialView(model);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineMusic.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -40,6 +41,19 @@ namespace OnlineMusic.Controllers
         public ActionResult Shopping_Cart()
         {
             return View();
+        }
+        [ChildActionOnly]
+        public PartialViewResult CaSi()
+        {
+            var model = new CASI_DAO().ListAll();
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Slider()
+        {
+            var model = new SLIDE_DAO().ListAll();
+            return PartialView(model);
         }
     }
 }

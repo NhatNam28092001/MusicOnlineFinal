@@ -4,7 +4,7 @@
 @foreach(var item in Model)
 {
 <div class="p-b-63">
-    <a href="/Main/Blog_Detail?meta=@item.MetaTitle" class="hov-img0 how-pos5-parent">
+    <a href="/Main/Blog_Detail?id=@item.ID" class="hov-img0 how-pos5-parent">
         <img src="@item.Image" alt="IMG-BLOG">
 
         <div class="flex-col-c-m size-123 bg9 how-pos5">
@@ -20,7 +20,7 @@
 
     <div class="p-t-32">
         <h4 class="p-b-15">
-            <a href="/Main/Blog_Detail?meta=@item.MetaTitle" class="ltext-108 cl2 hov-cl1 trans-04">
+            <a href="/Main/Blog_Detail?id=@item.ID" class="ltext-108 cl2 hov-cl1 trans-04">
                 @item.Name
             </a>
         </h4>
@@ -40,7 +40,7 @@
                 </span>
             </span>
 
-            @Html.ActionLink("Continue Reading", "Blog_Detail", "Main", null, new { @class = "stext-101 cl2 hov-cl1 trans-04 m-tb-10" })
+            @Html.ActionLink("Continue Reading", "Blog_Detail", "Main", new { id = @item.ID }, new { @class = "stext-101 cl2 hov-cl1 trans-04 m-tb-10" } )
         </div>
     </div>
 </div>

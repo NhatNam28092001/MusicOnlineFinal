@@ -199,11 +199,9 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\Blog1Controller.cs" />
-    <Compile Include="Controllers\CaSi1Controller.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\Product1Controller.cs" />
     <Compile Include="Controllers\ProductCategory1Controller.cs" />
-    <Compile Include="Controllers\Slide1Controller.cs" />
     <Compile Include="DAO\BLOG_DAO.cs" />
     <Compile Include="DAO\CASI_DAO.cs" />
     <Compile Include="DAO\DANHMUC_DAO.cs" />
@@ -3102,8 +3100,8 @@
     <Content Include="Views\Shared\Blog.cshtml" />
     <Content Include="Views\Shared\Slider.cshtml" />
     <Content Include="Views\Shared\Product.cshtml" />
-    <Content Include="Views\Shared\Blog _Detail.cshtml" />
     <Content Include="Views\Shared\Product_Detail.cshtml" />
+    <Content Include="Views\Blog1\Blog_Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3113,8 +3111,6 @@
     <Folder Include="Areas\Client\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Uploadimg\" />
-    <Folder Include="Views\Blog1\" />
-    <Folder Include="Views\CaSi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
