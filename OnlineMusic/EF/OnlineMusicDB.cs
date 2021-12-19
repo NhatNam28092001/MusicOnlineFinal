@@ -22,7 +22,7 @@ namespace OnlineMusic.EF
         public virtual DbSet<USER> USERs { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<ORDER> ORDERs { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<ORDERDETAIL> OrderDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -82,7 +82,7 @@ namespace OnlineMusic.EF
                 .Property(e => e.Password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<OrderDetail>()
+            modelBuilder.Entity<ORDERDETAIL>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
 

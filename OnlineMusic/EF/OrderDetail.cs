@@ -6,16 +6,12 @@ namespace OnlineMusic.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OrderDetail")]
-    public partial class OrderDetail
+    [Table("ORDERDETAIL")]
+    public partial class ORDERDETAIL
     {
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long ProductID { get; set; }
 
         [Key]
-        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long OrderID { get; set; }
 

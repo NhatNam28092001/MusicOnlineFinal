@@ -199,6 +199,7 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\Blog1Controller.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\Product1Controller.cs" />
     <Compile Include="DAO\BLOG_DAO.cs" />
@@ -215,13 +216,14 @@
     <Compile Include="EF\NEWS.cs" />
     <Compile Include="EF\OnlineMusicDB.cs" />
     <Compile Include="EF\ORDER.cs" />
-    <Compile Include="EF\OrderDetail.cs" />
+    <Compile Include="EF\ORDERDETAIL.cs" />
     <Compile Include="EF\SANPHAM.cs" />
     <Compile Include="EF\SLIDE.cs" />
     <Compile Include="EF\USER.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3090,13 +3092,13 @@
     <Content Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Blog.cshtml" />
     <Content Include="Views\Main\Contact.cshtml" />
-    <Content Include="Views\Main\Shopping_Cart.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
     <Content Include="Views\Shared\CaSi.cshtml" />
     <Content Include="Views\Shared\Slider.cshtml" />
     <Content Include="Views\Blog1\Blog_Detail.cshtml" />
     <Content Include="Views\Product1\Product.cshtml" />
     <Content Include="Views\Product1\Product_Detail.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3104,7 +3106,6 @@
     <Folder Include="Areas\Client\Controllers\" />
     <Folder Include="Areas\Client\Data\" />
     <Folder Include="Areas\Client\Views\Shared\" />
-    <Folder Include="Models\" />
     <Folder Include="Uploadimg\" />
   </ItemGroup>
   <ItemGroup>

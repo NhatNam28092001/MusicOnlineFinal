@@ -25,6 +25,12 @@ namespace OnlineMusic
             );
 
             routes.MapRoute(
+                name: "Add To Cart",
+                url: "them-vao-gio",
+                defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Main", action = "Index", id = UrlParameter.Optional }
