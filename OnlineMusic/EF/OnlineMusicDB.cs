@@ -103,5 +103,7 @@ namespace OnlineMusic.EF
                 .HasPrecision(18, 0);
 
         }
+
+        public System.Data.Entity.DbSet<OnlineMusic.Models.RegisterModel> RegisterModels { get; set; }
     }
 }

@@ -19,6 +19,46 @@ namespace OnlineMusic
                 defaults: new { controller = "Blog1", action = "Blog_Detail", id = UrlParameter.Optional }
             );*/
             routes.MapRoute(
+                name: "Register",
+                url: "dang-ky",
+                defaults: new { controller = "Customer", action = "Register", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+               name: "LogIn",
+               url: "dang-nhap",
+               defaults: new { controller = "Customer", action = "LogIn", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+                name: "Seo Product",
+                url: "product",
+                defaults: new { controller = "Product1", action = "Product", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Seo Cart",
+                url: "cart",
+                defaults: new { controller = "Cart", action = "Cart", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Seo About",
+                url: "about",
+                defaults: new { controller = "Main", action = "About", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Seo Contact",
+                url: "contact",
+                defaults: new { controller = "Main", action = "Contact", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Seo Blog",
+                url: "blog",
+                defaults: new { controller = "Main", action = "Blog", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Seo Blog Detail",
+                url: "blog-id",
+                defaults: new { controller = "Blog1", action = "Blog_Detail", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "Product Detail",
                 url: "chitiet/{metatitle}-{id}",
                 defaults: new { controller = "Product1", action = "Product_Detail", id = UrlParameter.Optional }

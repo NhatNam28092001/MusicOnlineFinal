@@ -1,4 +1,6 @@
-﻿using OnlineMusic.DAO;
+﻿using OnlineMusic.Common;
+using OnlineMusic.DAO;
+using OnlineMusic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace OnlineMusic.Controllers
 {
     public class MainController : Controller
     {
+
         // GET: Home
         public ActionResult Index()
         {
@@ -55,6 +58,17 @@ namespace OnlineMusic.Controllers
         {
             var model = new SLIDE_DAO().ListAll();
             return PartialView(model);
+        }
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[CommonConstants.CartSession];
+            var list = new List<CartItems>();
+            if (cart != null)
+            {
+                list = (List<CartItems>)cart;
+            }
+            return PartialView(list);
         }
     }
 }

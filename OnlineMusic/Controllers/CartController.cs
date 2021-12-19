@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace OnlineMusic.Controllers
 {
@@ -21,6 +22,25 @@ namespace OnlineMusic.Controllers
                 list = (List<CartItems>)cart;
             }
             return View(list);
+        }
+        public JsonResult Update(string cartModel)
+        {
+            var jsonCart = new JavaScriptSerializer().Deserialize<List<CartItems>>(cartModel);
+            var sessCart = (List<CartItems>)Session[CartSession];
+
+            foreach(var item in sessCart)
+            {
+                var jsonItem = jsonCart.SingleOrDefault(x => x.Product.ID == item.Product.ID);
+                if(jsonItem != null)
+                {
+                    item.Quantity = jsonItem.Quantity;
+                }
+            }
+            Session[CartSession] = sessCart;
+            return Json(new
+            {
+                status = true
+            });
         }
         public ActionResult AddItem(long productID, int quantity)
         {
