@@ -198,6 +198,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\CustomerLogin.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\Blog1Controller.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -208,6 +209,8 @@
     <Compile Include="DAO\CASI_DAO.cs" />
     <Compile Include="DAO\CUSTOMER_DAO.cs" />
     <Compile Include="DAO\DANHMUC_DAO.cs" />
+    <Compile Include="DAO\ORDERDETAIL_DAO.cs" />
+    <Compile Include="DAO\ORDER_DAO.cs" />
     <Compile Include="DAO\PRODUCTCATEGORY_DAO.cs" />
     <Compile Include="DAO\PRODUCT_DAO.cs" />
     <Compile Include="DAO\SLIDE_DAO.cs" />
@@ -227,6 +230,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItems.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1919,6 +1924,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\res.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\util.css" />
@@ -2007,6 +2013,7 @@
     <Content Include="Content\images\product-min-01.jpg" />
     <Content Include="Content\images\product-min-02.jpg" />
     <Content Include="Content\images\product-min-03.jpg" />
+    <Content Include="Content\images\scooter-courier.gif" />
     <Content Include="Content\images\slide-01.jpg" />
     <Content Include="Content\images\slide-02.jpg" />
     <Content Include="Content\images\slide-03.jpg" />
@@ -2017,7 +2024,10 @@
     <Content Include="Content\images\thumb-01.jpg" />
     <Content Include="Content\images\thumb-02.jpg" />
     <Content Include="Content\images\thumb-03.jpg" />
-    <Content Include="Content\js\controllers\CartController.js" />
+    <Content Include="Content\images\truckdelivery.gif" />
+    <Content Include="Scripts\controllers\baseController.js" />
+    <Content Include="Scripts\controllers\cartController.js" />
+    <Content Include="Content\js\jquery-ui.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map-custom.js" />
     <Content Include="Content\js\slick-custom.js" />
@@ -3078,6 +3088,7 @@
     <Content Include="Areas\Admin\Views\Product\Sua.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Xoa.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -3107,6 +3118,10 @@
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Shared\HeaderCart.cshtml" />
     <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\LogIn.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Shared\SmallCart.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1933,7 +1933,6 @@ input.num-product::-webkit-inner-spin-button {
 
 .table-shopping-cart .column-4 {
   width: 145px;
-  text-align: right;
 }
 
 .table-shopping-cart .column-5 {
@@ -1965,11 +1964,11 @@ input.num-product::-webkit-inner-spin-button {
   padding-bottom: 15px;
 }
 
-.table-shopping-cart td {
-  font-family: Poppins-Regular;
-  color: #555;
-  line-height: 1.6;
-}
+    .table-shopping-cart td {
+        font-family: kelsonBold, serif;
+        color: #555;
+        line-height: 1.6;
+    }
 
 
 
@@ -2196,9 +2195,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-111 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.6923;
+    font-family: kelsonBold, serif;
+    font-size: 14px;
+    line-height: 1.6923;
 }
 
 .stext-112 {

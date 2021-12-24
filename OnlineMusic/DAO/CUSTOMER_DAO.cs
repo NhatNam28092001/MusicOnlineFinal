@@ -19,6 +19,10 @@ namespace OnlineMusic.DAO
             db.SaveChanges();
             return true;
         }
+        public CUSTOMER GetByID(string userName)
+        {
+            return db.CUSTOMERs.SingleOrDefault(x => x.UserName == userName);
+        }
         public int Login(string userName, string password)
         {
             var result = db.CUSTOMERs.SingleOrDefault(x => x.UserName == userName);

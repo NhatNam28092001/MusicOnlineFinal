@@ -22,7 +22,7 @@ namespace OnlineMusic.EF
         public virtual DbSet<USER> USERs { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<ORDER> ORDERs { get; set; }
-        public virtual DbSet<ORDERDETAIL> OrderDetails { get; set; }
+        public virtual DbSet<ORDERDETAIL> ORDERDETAILs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -105,5 +105,7 @@ namespace OnlineMusic.EF
         }
 
         public System.Data.Entity.DbSet<OnlineMusic.Models.RegisterModel> RegisterModels { get; set; }
+
+        public System.Data.Entity.DbSet<OnlineMusic.Models.LoginModel> LoginModels { get; set; }
     }
 }

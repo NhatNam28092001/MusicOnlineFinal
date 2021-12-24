@@ -63,10 +63,10 @@ namespace OnlineMusic.Areas.Admin.Controllers
             }
             return View("Index");
         }
-        public ActionResult Danhsach(int page = 1, int pageSize = 40)
+        public ActionResult Danhsach(string searching,int page = 1, int pageSize = 40)
         {
             var dao = new PRODUCT_DAO();
-            var model = dao.ListAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searching, page, pageSize);
             return View(model);
         }
         [HttpGet]

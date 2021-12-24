@@ -29,6 +29,11 @@ namespace OnlineMusic
                defaults: new { controller = "Customer", action = "LogIn", id = UrlParameter.Optional }
            );
             routes.MapRoute(
+               name: "LogOut",
+               url: "thoat",
+               defaults: new { controller = "Customer", action = "LogOut", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
                 name: "Seo Product",
                 url: "product",
                 defaults: new { controller = "Product1", action = "Product", id = UrlParameter.Optional }
@@ -37,6 +42,11 @@ namespace OnlineMusic
                 name: "Seo Cart",
                 url: "cart",
                 defaults: new { controller = "Cart", action = "Cart", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Payment",
+                url: "payment",
+                defaults: new { controller = "Cart", action = "Payment", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Seo About",
@@ -63,11 +73,21 @@ namespace OnlineMusic
                 url: "chitiet/{metatitle}-{id}",
                 defaults: new { controller = "Product1", action = "Product_Detail", id = UrlParameter.Optional }
             );
-
+            routes.MapRoute(
+                name: "Search",
+                url: "tim-kiem",
+                defaults: new { controller = "Product1", action = "Search", id = UrlParameter.Optional }
+            );
             routes.MapRoute(
                 name: "Add To Cart",
                 url: "them-vao-gio",
                 defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Success",
+                url: "hoan-thanh",
+                defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

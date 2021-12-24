@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using OnlineMusic.DAO;
+using OnlineMusic.EF;
 
 namespace OnlineMusic.Controllers
 {
@@ -38,5 +40,25 @@ namespace OnlineMusic.Controllers
             ViewBag.RelatedProduct = new PRODUCT_DAO().ListRelatedSanPham(id);
             return View(product);
         }
+        public JsonResult ListName(string q)
+        {
+            var data = new PRODUCT_DAO().ListName(q);
+            return Json(new
+            {
+                data = data,
+                status = true
+            }, JsonRequestBehavior.AllowGet);
+        }
+        /*public ActionResult Search(string ketqua)
+        {
+            using (OnlineMusicDB dbModel = new OnlineMusicDB())
+            {
+
+                List<SANPHAM> sp = new List<SANPHAM>();
+                sp = dbModel.SANPHAMs.Where(x => x.Name.Contains(ketqua) || ketqua == null).ToList();
+                return Json(ketqua, JsonRequestBehavior.AllowGet);
+            }
+        }*/
+
     }
 }

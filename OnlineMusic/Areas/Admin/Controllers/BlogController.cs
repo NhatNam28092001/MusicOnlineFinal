@@ -17,10 +17,10 @@ namespace OnlineMusic.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult Danhsach(int page = 1, int pageSize = 4)
+        public ActionResult Danhsach(string searching,int page = 1, int pageSize = 4)
         {
             var dao = new BLOG_DAO();
-            var model = dao.ListAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searching,page, pageSize);
             return View(model);
         }
         [HttpGet]

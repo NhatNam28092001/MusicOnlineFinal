@@ -1,4 +1,5 @@
-﻿using OnlineMusic.DAO;
+﻿using OnlineMusic.Common;
+using OnlineMusic.DAO;
 using OnlineMusic.EF;
 using OnlineMusic.Models;
 using System;
@@ -53,6 +54,53 @@ namespace OnlineMusic.Controllers
                     }
                 }
             }
+            return View(model);
+        }
+        public ActionResult LogIn()
+        {
+            return View();
+        }
+        public ActionResult LogOut()
+        {
+            Session[CommonConstants.CUSTOMER_SESSION] = null;
+
+            return Redirect("/");
+        }
+        [HttpPost]
+        public ActionResult LogIn(LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new CUSTOMER_DAO();
+                var result = dao.Login(model.UserName, model.Password);
+                if (result == 1)
+                {
+                    var user = dao.GetByID(model.UserName);
+                    var userSession = new CustomerLogin();
+                    userSession.UserName = user.UserName;
+                    userSession.Name = user.Name;
+
+                    Session.Add(CommonConstants.CUSTOMER_SESSION, userSession);
+                    return Redirect("/");
+                }
+                else if (result == 0)
+                {
+                    ModelState.AddModelError("", "Tài khoản không tồn tại");
+                }
+                else if (result == -1)
+                {
+                    ModelState.AddModelError("", "Tài khoản đang bị khóa");
+                }
+                else if (result == -2)
+                {
+                    ModelState.AddModelError("", "Mật khẩu không chính xác");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Đăng nhập không thành công");
+                }
+            }
+            
             return View(model);
         }
     }

@@ -14,9 +14,13 @@ namespace OnlineMusic.DAO
         {
             db = new OnlineMusicDB();
         }
-        public IEnumerable<NEWS> ListAllPaging(int page, int pageSize)
+        public IEnumerable<NEWS> ListAllPaging(string searching, int page, int pageSize)
         {
-
+            IQueryable<NEWS> model = db.NEWS.OrderByDescending(x => x.ID);
+            if(!string.IsNullOrEmpty(searching))
+            {
+                model = model.Where(x => x.Name.Contains(searching));
+            }
             return db.NEWS.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
         public bool Insert(NEWS entity)
