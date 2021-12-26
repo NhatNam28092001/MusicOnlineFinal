@@ -85,6 +85,12 @@ namespace OnlineMusic
             );
 
             routes.MapRoute(
+                name: "PayPal",
+                url: "paypal",
+                defaults: new { controller = "Cart", action = "PaymentWithPayPal", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Success",
                 url: "hoan-thanh",
                 defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional }

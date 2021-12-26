@@ -23,6 +23,7 @@ namespace OnlineMusic.EF
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<ORDER> ORDERs { get; set; }
         public virtual DbSet<ORDERDETAIL> ORDERDETAILs { get; set; }
+        public virtual DbSet<FEEDBACK> FEEDBACKs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

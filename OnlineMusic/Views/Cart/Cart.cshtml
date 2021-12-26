@@ -64,7 +64,7 @@
                                             </div>  
                                         </td>
 
-                                        <td class="column-3">@item.Product.Price.GetValueOrDefault(0).ToString("N0") VNĐ</td>
+                                        <td class="column-3">@item.Product.Price.GetValueOrDefault(0).ToString() VNĐ</td>
                                         <td class="column-4">
                                             <div class="wrap-num-product flex-w m-l-auto m-r-0">
 
@@ -72,7 +72,7 @@
                                              
                                             </div>
                                         </td>
-                                        <td class="column-5">@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0")) VNĐ</td>
+                                        <td class="column-5">@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString()) VNĐ</td>
                                         @*<td class="column-5">@Model.Sum(m => (m.Product.Price.GetValueOrDefault(0) * m.Quantity)).ToString("N0") VNĐ VNĐ</td>*@
                                     </tr>
                                 }
@@ -92,6 +92,10 @@
                             <button id="btnPayment" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
                                 Payment
                             </button>
+                            <button id="btnPaypal" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Payment With PayPal
+                            </button>
+                            @{ Html.ActionLink("Payment With PayPal", "PaymentWithPayPal", "Cart", null , new { @class = "stext-109 cl8 hov-cl1 trans-04" });}
                         </div>
                     </div>
                 </div>

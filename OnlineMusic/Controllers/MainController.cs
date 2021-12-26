@@ -1,5 +1,6 @@
 ﻿using OnlineMusic.Common;
 using OnlineMusic.DAO;
+using OnlineMusic.EF;
 using OnlineMusic.Models;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,27 @@ namespace OnlineMusic.Controllers
                 list = (List<CartItems>)cart;
             }
             return PartialView(list);
+        }
+        [HttpPost]
+        public ActionResult Send(string email, string content)
+        {
+            var feedback = new FEEDBACK();
+            feedback.Email = email;
+            feedback.CreateDate = DateTime.Now.ToString();
+            feedback.FeedBackContent = content;
+            var id = new FEEDBACK_DAO().Insert(feedback);
+            if (id >0)
+            {
+                return Redirect("/");
+                //send mail
+            }
+
+            else
+                return Json(new
+                {
+                    status = false
+                });
+
         }
     }
 }

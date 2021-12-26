@@ -30,7 +30,7 @@ namespace OnlineMusic.DAO
             IQueryable<SANPHAM> model = db.SANPHAMs.OrderByDescending(x => x.ID);
             if (!string.IsNullOrEmpty(searching))
             {
-                model = model.Where(x => x.Name.Contains(searching));
+                model = model.Where(x => x.Name.StartsWith(searching) || x.Name.Contains(searching));
             }
             return db.SANPHAMs.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
