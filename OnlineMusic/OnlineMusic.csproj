@@ -83,6 +83,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -198,14 +199,21 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\Blog1Controller.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\Product1Controller.cs" />
     <Compile Include="DAO\BLOG_DAO.cs" />
     <Compile Include="DAO\CASI_DAO.cs" />
+    <Compile Include="DAO\CUSTOMER_DAO.cs" />
+    <Compile Include="DAO\DANHMUC_DAO.cs" />
     <Compile Include="DAO\PRODUCTCATEGORY_DAO.cs" />
     <Compile Include="DAO\PRODUCT_DAO.cs" />
     <Compile Include="DAO\SLIDE_DAO.cs" />
     <Compile Include="DAO\USER_DAO.cs" />
     <Compile Include="EF\CASI.cs" />
+    <Compile Include="EF\CUSTOMER.cs" />
     <Compile Include="EF\DANHMUC.cs" />
     <Compile Include="EF\DANHMUCSANPHAM.cs" />
     <Compile Include="EF\NEWS.cs" />
@@ -216,6 +224,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItems.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1908,6 +1918,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\res.css" />
     <Content Include="Content\css\util.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -2003,6 +2014,7 @@
     <Content Include="Content\images\thumb-01.jpg" />
     <Content Include="Content\images\thumb-02.jpg" />
     <Content Include="Content\images\thumb-03.jpg" />
+    <Content Include="Content\js\controllers\CartController.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map-custom.js" />
     <Content Include="Content\js\slick-custom.js" />
@@ -3040,28 +3052,28 @@
     <Content Include="Areas\Admin\Views\CaSi\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CaSi\Sua.cshtml" />
     <Content Include="Areas\Admin\Views\CaSi\Xoa.cshtml" />
-    <Content Include="Areas\Admin\Views\Blog\Danhsach.cshtml" />
-    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Blog\Sua.cshtml" />
-    <Content Include="Areas\Admin\Views\Blog\Xoa.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Danhsach.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Sua.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Xoa.cshtml" />
-    <Content Include="Areas\Admin\Views\Slide\Danhsach.cshtml" />
-    <Content Include="Areas\Admin\Views\Slide\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Slide\Sua.cshtml" />
-    <Content Include="Areas\Admin\Views\Slide\Xoa.cshtml" />
     <Content Include="Content\libs\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Content\libs\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\libs\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\libs\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\libs\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\libs\userfiles\.htaccess" />
+    <Content Include="Areas\Admin\Views\Blog\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Danhsach.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Sua.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Danhsach.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Xoa.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Danhsach.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Xoa.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3078,14 +3090,19 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Blog1\Blog_Detail.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
     <Content Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Blog.cshtml" />
-    <Content Include="Views\Main\Blog_Detail.cshtml" />
     <Content Include="Views\Main\Contact.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Views\Main\Product.cshtml" />
-    <Content Include="Views\Main\Product_Detail.cshtml" />
-    <Content Include="Views\Main\Shopping_Cart.cshtml" />
+    <Content Include="Views\Product1\Product.cshtml" />
+    <Content Include="Views\Product1\Product_Detail.cshtml" />
+    <Content Include="Views\Shared\CaSi.cshtml" />
+    <Content Include="Views\Shared\HeaderCart.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
+    <Content Include="Views\Shared\Slider.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -3094,8 +3111,7 @@
     <Folder Include="Areas\Client\Controllers\" />
     <Folder Include="Areas\Client\Data\" />
     <Folder Include="Areas\Client\Views\Shared\" />
-    <Folder Include="Models\" />
-    <Folder Include="Upload\" />
+    <Folder Include="Uploadimg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

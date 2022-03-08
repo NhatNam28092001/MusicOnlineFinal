@@ -21,6 +21,8 @@ namespace OnlineMusic.EF
     
         public virtual DbSet<USER> USERs { get; set; }
 
+        public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CASI>()
@@ -72,6 +74,10 @@ namespace OnlineMusic.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<USER>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CUSTOMER>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
         }

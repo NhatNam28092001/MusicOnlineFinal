@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PagedList.Mvc;
 
 namespace OnlineMusic.DAO
 {
@@ -28,6 +29,14 @@ namespace OnlineMusic.DAO
         public List<NEWS> ListAll()
         {
             return db.NEWS.OrderBy(x => x.ID).ToList();
+        }
+        public List<NEWS> ListBlog(int id)
+        {
+            return db.NEWS.OrderBy(x => x.ID).ToList();
+        }
+        public NEWS ViewDetail(int id)
+        {
+            return db.NEWS.Find(id);
         }
     }
 }

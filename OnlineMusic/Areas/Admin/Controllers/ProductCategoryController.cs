@@ -63,7 +63,7 @@ namespace OnlineMusic.Areas.Admin.Controllers
             }
             return View("Index");
         }
-        public ActionResult Danhsach(int page = 1, int pageSize = 10)
+        public ActionResult Danhsach(int page = 1, int pageSize = 4)
         {
             var dao = new PRODUCTCATEGORY_DAO();
             var model = dao.ListAllPaging(page, pageSize);
