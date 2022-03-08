@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using OnlineMusic.EF;
 using System.Data.Entity;
 
 namespace OnlineMusic.Areas.Admin.Controllers
@@ -15,8 +14,8 @@ namespace OnlineMusic.Areas.Admin.Controllers
     {
         // GET: Admin/User
         [HttpGet]
-        public ActionResult Index()
-        {
+        public ActionResult Index() 
+        {         
             return View();
         }
         // GET: Admin/User/Sua/5

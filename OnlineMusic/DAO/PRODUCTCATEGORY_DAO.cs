@@ -28,5 +28,9 @@ namespace OnlineMusic.DAO
         {
             return db.DANHMUCSANPHAMs.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
+        public DANHMUCSANPHAM ViewDetail(long id)
+        {
+            return db.DANHMUCSANPHAMs.Find(id);
+        }
     }
 }

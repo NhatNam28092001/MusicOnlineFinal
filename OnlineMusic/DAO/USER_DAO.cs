@@ -32,6 +32,10 @@ namespace OnlineMusic.DAO
             db.SaveChanges();
             return true;
         }
+        /*public IEnumerable<USER> ListAllPaging(int page,int pageSize)
+        {
+            return db.USERs.ToPagedList();
+        }*/
         public IEnumerable<USER> ListAllPaging(int page, int pageSize)
         {
 

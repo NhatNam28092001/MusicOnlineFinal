@@ -1,9 +1,8 @@
-﻿@model IEnumerable<OnlineMusic.EF.DANHMUCSANPHAM>
-
-@{
-    ViewBag.Title = "Danhsach";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+﻿@*@model IEnumerable<OnlineMusic.EF.DANHMUCSANPHAM>*@
+@model PagedList.IPagedList<OnlineMusic.EF.DANHMUCSANPHAM>
+@using PagedList.Mvc;
+@{ ViewBag.Title = "Danhsach";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 <div>
     <button class="btn btn-light" type="button">
@@ -47,11 +46,12 @@
                 |
                 <a href="/Admin/ProductCategory/Xoa?meta=@item.MetaTitle"> Xóa</a>
             </td>
-        </tr>}
+        </tr>
+}
 
                 </tbody>
             </table>
-            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+            @Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }))
         </div>
     </div>
 </div>

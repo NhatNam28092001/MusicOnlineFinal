@@ -1,9 +1,9 @@
-﻿@model IEnumerable<OnlineMusic.EF.SLIDE>
+﻿@*@model IEnumerable<OnlineMusic.EF.SLIDE>*@
+@model PagedList.IPagedList<OnlineMusic.EF.SLIDE>
 
-@{
-    ViewBag.Title = "Danhsach";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+@using PagedList.Mvc;
+@{ ViewBag.Title = "Danhsach";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 
 <div>
@@ -24,7 +24,6 @@
                         <th>ID</th>
                         <th>Image</th>
                         <th>DisplayOrder</th>
-                        <th>Link</th>
                         <th>Mô tả</th>
                         <th>Status</th>
                         <th></th>
@@ -38,7 +37,6 @@
             <td>@item.ID</td>
             <td><img src="@item.Image" style="width: 350px; height:auto" /></td>
             <td>@item.DisplayOrder</td>
-            <td>@item.Link</td>
             <td>@item.Description</td>
             <td>@item.Status</td>
             <td>
@@ -49,7 +47,7 @@
 
                 </tbody>
             </table>
-            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+            @Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }))
         </div>
     </div>
 </div>

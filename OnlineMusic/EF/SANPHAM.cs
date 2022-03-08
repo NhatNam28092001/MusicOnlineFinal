@@ -39,5 +39,7 @@ namespace OnlineMusic.EF
         public int? Quantity { get; set; }
 
         public bool? Status { get; set; }
+
+        public long? CategoryID { get; set; }
     }
 }
