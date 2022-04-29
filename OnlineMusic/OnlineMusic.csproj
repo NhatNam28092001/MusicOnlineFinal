@@ -67,6 +67,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -205,6 +211,7 @@
     <Compile Include="Common\CustomerLogin.cs" />
     <Compile Include="Common\MailHelper.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Content Include="Content\css\chat.css" />
     <Compile Include="Controllers\Blog1Controller.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -236,6 +243,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hubs\Chat.cs" />
     <Compile Include="Models\CartItems.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PaypalConfig.cs" />
@@ -2034,6 +2042,8 @@
     <Content Include="Content\images\thumb-02.jpg" />
     <Content Include="Content\images\thumb-03.jpg" />
     <Content Include="Content\images\truckdelivery.gif" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\chat.js" />
     <Content Include="Content\template\neworder.html" />
     <Content Include="Scripts\controllers\contactController.js" />
     <Content Include="Scripts\controllers\baseController.js" />
@@ -3106,6 +3116,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

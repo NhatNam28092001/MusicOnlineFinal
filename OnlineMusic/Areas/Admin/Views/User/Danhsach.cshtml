@@ -2,11 +2,14 @@
 @using PagedList.Mvc;
 @{ ViewBag.Title = "Danhsach";
                 Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
-<div>
+<div class="d-sm-flex align-items-center justify-content-between">
     <button class="btn btn-light" type="button">
         @Html.ActionLink("Thêm người dùng", "Index")
     </button>
-
+    <button class="btn btn-light" type="button">
+        <i class="fas fa-download fa-sm text-white-50"></i>
+        @Html.ActionLink("Export to Excel", "Export")
+    </button>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">

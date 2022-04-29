@@ -63,10 +63,10 @@ namespace OnlineMusic.Areas.Admin.Controllers
             }
             return View("Index");
         }
-        public ActionResult Danhsach(string searching,int page = 1, int pageSize = 40)
+        public ActionResult Danhsach(int page = 1, int pageSize = 4)
         {
             var dao = new PRODUCT_DAO();
-            var model = dao.ListAllPaging(searching, page, pageSize);
+            var model = dao.ListAllPaging(page, pageSize);
             return View(model);
         }
         [HttpGet]
@@ -97,6 +97,16 @@ namespace OnlineMusic.Areas.Admin.Controllers
             catch
             {
                 return View();
+            }
+        }
+        public ActionResult Search(string ketqua)
+        {
+            using (OnlineMusicDB dbModel = new OnlineMusicDB())
+            {
+
+                List<SANPHAM> sp = new List<SANPHAM>();
+                sp = dbModel.SANPHAMs.Where(x => x.Name.Contains(ketqua) || ketqua == null).ToList();
+                return Json(ketqua, JsonRequestBehavior.AllowGet);
             }
         }
     }

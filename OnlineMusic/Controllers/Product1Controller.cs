@@ -26,11 +26,12 @@ namespace OnlineMusic.Controllers
         {
             return View();
         }
-        public ActionResult Product()
+        public ActionResult Product(int page = 1, int pageSize = 40)
         {
             var productdao = new PRODUCT_DAO();
             ViewBag.SANPHAM = productdao.ListSanPham(1);
-            return View();
+            var model = productdao.ListAllPaging(page, pageSize);
+            return View(model);
         }
 
         public ActionResult Product_Detail(long id)
@@ -49,7 +50,7 @@ namespace OnlineMusic.Controllers
                 status = true
             }, JsonRequestBehavior.AllowGet);
         }
-        /*public ActionResult Search(string ketqua)
+        public ActionResult Search(string ketqua)
         {
             using (OnlineMusicDB dbModel = new OnlineMusicDB())
             {
@@ -58,7 +59,7 @@ namespace OnlineMusic.Controllers
                 sp = dbModel.SANPHAMs.Where(x => x.Name.Contains(ketqua) || ketqua == null).ToList();
                 return Json(ketqua, JsonRequestBehavior.AllowGet);
             }
-        }*/
+        }
 
     }
 }

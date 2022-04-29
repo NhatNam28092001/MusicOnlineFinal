@@ -1,5 +1,5 @@
-﻿@model IEnumerable<OnlineMusic.EF.NEWS>
-
+﻿@model PagedList.IPagedList<OnlineMusic.EF.NEWS>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Danhsach";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -57,7 +57,7 @@
 
                 </tbody>
             </table>
-            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+            @Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }))
         </div>
     </div>
 </div>

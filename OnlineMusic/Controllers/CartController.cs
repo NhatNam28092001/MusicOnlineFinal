@@ -233,7 +233,7 @@ namespace OnlineMusic.Controllers
             var transactionList = new List<Transaction>();
             transactionList.Add(new Transaction()
             {
-                description = "Chien Testing transaction description",
+                description = "Testing transaction description",
                 invoice_number = Convert.ToString((new Random()).Next(100000)),
                 amount = amount,
                 item_list = listItems

@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace OnlineMusic.Areas.Admin.Controllers
 {
@@ -100,6 +103,25 @@ namespace OnlineMusic.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+        public void Export()
+        {
+            StringWriter strw = new StringWriter();
+            strw.WriteLine("\"ID\",\"UserName\",\"Password\",\"Name\",\"Address\",\"Email\",\"Phone\",\"Status\"");
+            Response.ClearContent();
+            Response.AddHeader("content-disposition"
+                                , string.Format("attachment;filename=NewsTest_{0}.csv", DateTime.Now));
+            Response.ContentType= "text/csv";
+            using (OnlineMusicDB dbModel = new OnlineMusicDB())
+            {
+                var list = dbModel.USERs.OrderBy(x => x.ID);
+                foreach(var news in list){
+                    strw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\"",
+                        news.ID, news.UserName,news.Password,news.Name,news.Address,news.Email,news.Phone,news.Status));
+                }
+            }
+            Response.Write(strw.ToString());
+            Response.End();
         }
     }
 }

@@ -13,12 +13,7 @@ namespace OnlineMusic.DAO
         {
             db = new OnlineMusicDB();
         }
-        /*public long Insert(DANHMUC dm)
-        {
-            db.DANHMUCs.Add(dm);
-            db.SaveChanges();
-            return DANHMUC.ID;
-        }*/
+        
         public List<DANHMUC> ListAll()
         {
             return db.DANHMUCs.Where(x => x.Status == true).ToList();

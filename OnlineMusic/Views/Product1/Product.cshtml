@@ -1,4 +1,5 @@
-﻿
+﻿@model PagedList.IPagedList<OnlineMusic.EF.SANPHAM>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,23 +7,15 @@
 }
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!-- Cart -->
-<!-- Product -->
 <div class="bg0 m-t-23 p-b-140">
     <div class="container">
         <div class="flex-w flex-sb-m p-b-52">
             @{ Html.RenderAction("ProductCategory", "Product1");}
-            <!-- Search product -->
-
-
-
         </div>
 
-        <div class="row isotope-grid" , id="SearchData">
+        <div class="row isotope-grid">
 
-            @* @{ Html.RenderAction("Product", "Product1");}*@
-            @foreach (var item in sp)
+            @foreach (var item in Model)
             {
                 var url = "/chitiet/" + item.MetaTitle + "-" + item.ID;
                 <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item @item.CategoryID">
@@ -67,7 +60,16 @@
             }
 
         </div>
+        <div class="flex-c-m flex-w w-full p-t-38">
+            @*@Html.PagedListPager(Model, Page => Url.Action("Product", new { Page}))
+                <a href="/product?Page=1" class="flex-c-m how-pagination1 trans-04 m-all-7 active">
+                    1
+                </a>
 
+                <a href="/product?Page=2" class="flex-c-m how-pagination1 trans-04 m-all-7">
+                    2
+                </a>*@
+        </div>
         <!-- Load more -->
         <div class="flex-c-m flex-w w-full p-t-45">
             <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
@@ -75,34 +77,6 @@
             </a>
         </div>
     </div>
-</div>@*
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#txtKeyword').click(function () {
-                var ketqua = $('#Search').val();
-                var SetData = $('#SearchData');
-                SetData.html("");
-                $.ajax({
-                    type: "post",
-                    url: "/tim-kiem?ket-qua" + ketqua,
-                    contentType: "html",
+</div>
 
-                    success: function (result) {
-                        if (result.length == 0) {
-                            SetData.append('<div class="stext - 105 cl3">Không có kết quả phù hợp</div>')
-                        }
-                        else {
-                            function contentStringHtml(name) {
-                                var list;
-                                $.each(result, function (index, value) {
-                                    list += '<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item"' + value.CategoryID + '">';
-                                });
-                                return '<div>Thanh cong</div>';
-                            }
-                        }
-                    }
-                });
-            });
-        });
-    </script>*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>

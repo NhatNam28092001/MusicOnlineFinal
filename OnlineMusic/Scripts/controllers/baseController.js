@@ -1,4 +1,4 @@
-﻿/*var common = {
+﻿var common = {
     init: function () {
         common.registerEvent();
     },
@@ -33,4 +33,4 @@
      };
     }
 }
-common.init();*/
+common.init();

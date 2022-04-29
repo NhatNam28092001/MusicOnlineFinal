@@ -1,4 +1,5 @@
-﻿@model IEnumerable<OnlineMusic.EF.SANPHAM>
+﻿@model PagedList.IPagedList<OnlineMusic.EF.SANPHAM>
+@using PagedList.Mvc;
 
 @{ ViewBag.Title = "Danhsach";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
@@ -9,19 +10,11 @@
     </button>
 
 </div>
+
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        @using (Html.BeginForm("Danhsach", "Product", FormMethod.Get))
-        {
-<div class="input-group">
-    <input name="searching" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-           aria-label="Search" aria-describedby="basic-addon2" style="width:360px">
-    <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
-            <i class="fas fa-search fa-sm"></i>
-        </button>
-    </div>
-</div>}
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -60,15 +53,11 @@
                 <a href="/Admin/Product/Sua?meta=@item.MetaTitle">Sửa</a>
                 <a href="/Admin/Product/Xoa?meta=@item.MetaTitle"> Xóa</a>
             </td>
-        </tr>
-}
+        </tr>}
 
                 </tbody>
             </table>
-            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+            @Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }))
         </div>
     </div>
 </div>
-
-
-

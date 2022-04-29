@@ -1,7 +1,8 @@
-﻿@model IEnumerable<OnlineMusic.EF.CASI>
+﻿@model PagedList.IPagedList<OnlineMusic.EF.CASI>
 
+@using PagedList.Mvc;
 @{ ViewBag.Title = "Danhsach";
-                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 <div>
     <button class="btn btn-light" type="button">
@@ -30,22 +31,23 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-        <tr>
-            <td>@item.SingerID</td>
-            <td>@item.Name</td>
-            <td>@item.MetaTitle</td>
-            <td>@item.Desciption</td>
-            <td>@item.Image</td>
-            <td>@item.CategoryID</td>
-            <td>
-                <a href="/Admin/CaSi/Sua?meta=@item.MetaTitle">Sửa</a>
-                <a href="/Admin/CaSi/Xoa?meta=@item.MetaTitle"> Xóa</a>
-            </td>
-        </tr>}
+                        <tr>
+                            <td>@item.SingerID</td>
+                            <td>@item.Name</td>
+                            <td>@item.MetaTitle</td>
+                            <td>@item.Desciption</td>
+                            <td>@item.Image</td>
+                            <td>@item.CategoryID</td>
+                            <td>
+                                <a href="/Admin/CaSi/Sua?meta=@item.MetaTitle">Sửa</a>
+                                <a href="/Admin/CaSi/Xoa?meta=@item.MetaTitle"> Xóa</a>
+                            </td>
+                        </tr>
+                    }
 
                 </tbody>
             </table>
-            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+            <center>@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }))</center>
         </div>
     </div>
 </div>
