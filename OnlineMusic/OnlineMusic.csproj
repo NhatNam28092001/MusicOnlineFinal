@@ -3110,6 +3110,7 @@
     <Content Include="Areas\Admin\Views\Product\Xoa.cshtml" />
     <Content Include="Areas\Admin\Views\FeedBack\Danhsach.cshtml" />
     <Content Include="Areas\Admin\Views\FeedBack\Chitiet.cshtml" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -3158,6 +3159,7 @@
     <Folder Include="Areas\Client\Controllers\" />
     <Folder Include="Areas\Client\Data\" />
     <Folder Include="Areas\Client\Views\Shared\" />
+    <Folder Include="EF\Migrations\" />
     <Folder Include="Uploadimg\" />
   </ItemGroup>
   <ItemGroup>
